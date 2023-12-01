@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0f40daed-8369-4a9d-a294-dc7312802dc8" name="openproject">
+        <fileTransfer rootFolder="/home/medix/docker/openproject" accessType="SFTP" host="ident" port="22" sshConfigId="103b4cd4-7b0d-4310-ad4a-d3c38044aa2c" sshConfig="medix@ident:22 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
