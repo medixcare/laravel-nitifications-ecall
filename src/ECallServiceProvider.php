@@ -13,19 +13,19 @@ class ECallServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->app->when(ECallChannel::class)
-                  ->needs(ECall::class)
-                  ->give(function () {
-                      $username = config('services.ecall.username');
-                      $password = config('services.ecall.password');
-                      $from     = config('services.ecall.from');
+            ->needs(ECall::class)
+            ->give(function () {
+                $username = config('services.ecall.username');
+                $password = config('services.ecall.password');
+                $from     = config('services.ecall.from');
 
-                      return new ECall(
-                          $username,
-                          $password,
-                          $from,
-                          new HttpClient()
-                      );
-                  });
+                return new ECall(
+                    $username,
+                    $password,
+                    $from,
+                    new HttpClient()
+                );
+            });
     }
 
     /**

@@ -5,12 +5,7 @@ namespace NotificationChannels\ECall;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Log;
-use Nette\NotImplementedException;
 use NotificationChannels\ECall\Exceptions\UnableToSendNotification;
 
 class ECall
@@ -101,7 +96,6 @@ class ECall
         $body    = json_encode($params);
 
         $request = new Request('POST', $this->apiUrl, $headers, $body);
-
         try {
             return $this->httpClient()->send($request);
         } catch (ClientException $exception) {
